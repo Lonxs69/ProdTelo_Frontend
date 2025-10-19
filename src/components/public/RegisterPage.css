@@ -1,0 +1,1361 @@
+/* ============================================
+   REGISTER PAGE - ESTILOS COMPLETOS
+   ============================================ */
+
+/* --- ANIMACIONES --- */
+@keyframes spin { 
+  0% { transform: rotate(0deg); } 
+  100% { transform: rotate(360deg); } 
+}
+
+@keyframes float { 
+  0%, 100% { transform: translateY(0px); } 
+  50% { transform: translateY(-20px); } 
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- CONTAINER PRINCIPAL --- */
+.register-container-telofundi {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.register-container-telofundi:not(.mobile) {
+  padding: 15px;
+}
+
+.register-container-telofundi.mobile {
+  padding: 0;
+}
+
+/* --- MODALES BASE --- */
+.register-modal-telofundi {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 100px rgba(228, 77, 17, 0.1);
+  border: 1px solid #333;
+}
+
+.register-modal-telofundi:not(.mobile) {
+  width: 90%;
+  border-radius: 16px;
+}
+
+.register-modal-telofundi.mobile {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+}
+
+/* --- MODAL DE SELECCIÓN DE TIPO --- */
+.register-modal-telofundi.user-type-selection:not(.mobile) {
+  max-width: 450px;
+  max-height: 70vh;
+}
+
+.register-modal-telofundi.user-type-selection.mobile {
+  height: 100vh;
+  max-height: none;
+}
+
+.register-modal-content {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.register-modal-content:not(.mobile) {
+  padding: 50px 30px 30px;
+  height: auto;
+  max-height: 70vh;
+}
+
+.register-modal-content.mobile {
+  padding: 90px 25px 25px;
+  height: 100%;
+}
+
+.register-modal-header {
+  text-align: center;
+  position: relative;
+}
+
+.register-modal-header:not(.mobile) {
+  margin-bottom: 30px;
+}
+
+.register-modal-header.mobile {
+  margin-bottom: 35px;
+}
+
+.register-modal-header h2 {
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #fff, #ccc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.register-modal-header h2:not(.mobile) {
+  font-size: 1.5rem;
+}
+
+.register-modal-header h2.mobile {
+  font-size: 1.3rem;
+}
+
+.register-modal-header p {
+  color: #999;
+  margin: 0;
+  font-weight: 400;
+}
+
+.register-modal-header p:not(.mobile) {
+  font-size: 0.9rem;
+}
+
+.register-modal-header p.mobile {
+  font-size: 0.85rem;
+}
+
+/* --- BOTONES DE TIPO DE USUARIO --- */
+.register-user-type-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+  flex: 1;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.register-user-type-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #1a1a1a, #262626);
+  border: 2px solid #333;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-user-type-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(228, 77, 17, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.register-user-type-btn:hover::before {
+  left: 100%;
+}
+
+.register-user-type-btn:not(.mobile) {
+  padding: 18px 20px;
+  font-size: 1rem;
+}
+
+.register-user-type-btn.mobile {
+  padding: 16px 18px;
+  font-size: 0.95rem;
+}
+
+.register-user-type-btn:hover {
+  border-color: rgb(228, 77, 17);
+  background: linear-gradient(135deg, #262626, #333);
+  transform: translateX(5px);
+  box-shadow: 0 5px 20px rgba(228, 77, 17, 0.3);
+}
+
+.register-user-type-icon {
+  width: 20px;
+  height: 20px;
+  color: rgb(228, 77, 17);
+  flex-shrink: 0;
+}
+
+.register-user-type-arrow {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+.register-user-type-btn:hover .register-user-type-arrow {
+  transform: translateX(5px);
+}
+
+.register-back-to-login {
+  padding: 10px;
+  background: rgb(228, 77, 17);
+  border: 1px solid rgb(228, 77, 17);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.register-back-to-login:hover {
+  background: rgb(200, 65, 15);
+  border-color: rgb(200, 65, 15);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(228, 77, 17, 0.3);
+}
+
+/* --- MODAL DE AGENCIA --- */
+.register-modal-telofundi.agency-form:not(.mobile) {
+  max-width: 700px;
+  max-height: 90vh;
+}
+
+.register-modal-telofundi.agency-form.mobile {
+  height: 100vh;
+  max-height: none;
+}
+
+.register-modal-telofundi.agency-form {
+  display: flex;
+  overflow: hidden;
+}
+
+/* --- CONTENEDOR INTERNO DE AGENCIA (IGUAL QUE MAIN-FORM) --- */
+.register-agency-modal-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.register-agency-modal-inner:not(.mobile) {
+  flex-direction: row;
+}
+
+.register-agency-modal-inner.mobile {
+  flex-direction: column;
+}
+
+/* --- LADO DEL FORMULARIO DE AGENCIA (IGUAL ESTRUCTURA) --- */
+.register-agency-form-side {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-agency-form-side:not(.mobile) {
+  flex: 1;
+  max-width: 400px;
+  padding: 50px 30px 30px;
+  justify-content: flex-start;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.register-agency-form-side.mobile {
+  flex: none;
+  width: 100%;
+  height: 100%;
+  padding: 70px 25px 25px;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+/* --- LADO DE MARCA DE AGENCIA (NO MÓVIL) --- */
+.register-agency-brand-side {
+  flex: 0.6;
+  background: rgb(228, 77, 17);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+}
+
+.register-agency-brand-decoration {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+}
+
+.register-agency-brand-decoration.decoration-1 {
+  top: 15%;
+  right: 10%;
+  width: 80px;
+  height: 80px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.register-agency-brand-decoration.decoration-2 {
+  bottom: 15%;
+  left: 15%;
+  width: 60px;
+  height: 60px;
+  animation: float 4s ease-in-out infinite reverse;
+}
+
+.register-agency-brand-content {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.register-agency-brand-logo {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.register-agency-brand-logo svg {
+  width: 40px;
+  height: 40px;
+  stroke: white;
+}
+
+.register-agency-brand-subtitle {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  opacity: 0.95;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.register-agency-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.register-agency-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 12px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.register-agency-feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- HEADER Y FORMULARIO DE AGENCIA --- */
+.register-agency-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.register-agency-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(228, 77, 17, 0.15), rgba(228, 77, 17, 0.05));
+  color: rgb(228, 77, 17);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  margin-bottom: 12px;
+  border: 1px solid rgba(228, 77, 17, 0.3);
+  font-weight: 600;
+}
+
+.register-agency-title {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  background: linear-gradient(135deg, #fff, #ccc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.register-agency-subtitle {
+  color: #999;
+  font-size: 0.8rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.register-agency-section {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #333;
+}
+
+.register-agency-section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.register-agency-section-title {
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.register-agency-section-title::before {
+  content: '';
+  width: 4px;
+  height: 18px;
+  background: linear-gradient(135deg, rgb(228, 77, 17), rgb(255, 140, 66));
+  border-radius: 2px;
+}
+
+/* --- ÉXITO DE REGISTRO --- */
+.register-success-container {
+  text-align: center;
+  padding: 40px 20px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.register-success-icon-container {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+}
+
+.register-success-icon {
+  width: 35px;
+  height: 35px;
+  color: white;
+}
+
+.register-success-title {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+}
+
+.register-success-text {
+  color: #ccc;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0 0 12px 0;
+}
+
+.register-success-note {
+  color: rgb(228, 77, 17);
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* --- ARCHIVOS Y DOCUMENTOS --- */
+.register-file-upload-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+}
+
+.register-file-upload-title {
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.register-file-upload-description-box {
+  background: linear-gradient(135deg, #1a1a1a, #262626);
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.register-file-upload-description {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.register-file-upload-description .alert-icon {
+  color: #f59e0b;
+  margin-right: 0;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.register-file-upload-description ul {
+  margin: 6px 0 0 0;
+  padding-left: 18px;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.register-file-upload-description li {
+  margin-bottom: 4px;
+}
+
+.register-documents-row {
+  display: flex;
+  gap: 15px;
+}
+
+.register-documents-row .register-file-upload-field {
+  flex: 1;
+}
+
+.register-file-upload-field {
+  margin-bottom: 15px;
+}
+
+.register-agency-label {
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.register-file-upload-hidden {
+  display: none;
+}
+
+.register-file-upload-area {
+  border: 2px dashed #333;
+  border-radius: 8px;
+  padding: 18px 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #1a1a1a, #262626);
+}
+
+.register-file-upload-area:hover:not(.disabled) {
+  border-color: rgb(228, 77, 17);
+  background: linear-gradient(135deg, #262626, #333);
+  transform: translateY(-2px);
+}
+
+.register-file-upload-area.error {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.register-file-upload-area.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.register-file-upload-icon {
+  margin-bottom: 8px;
+}
+
+.register-file-upload-text {
+  color: white;
+  font-weight: 500;
+  margin: 0 0 4px 0;
+  font-size: 0.8rem;
+}
+
+.register-file-upload-hint {
+  color: #999;
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+/* --- PROGRESO DE SUBIDA --- */
+.upload-progress-container {
+  border: 2px solid rgb(228, 77, 17);
+  border-radius: 8px;
+  padding: 15px;
+  background: linear-gradient(135deg, #1a1a1a, #262626);
+}
+
+.upload-progress-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.upload-progress-bar {
+  width: 100%;
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.upload-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, rgb(228, 77, 17), rgb(255, 140, 66));
+  transition: width 0.3s ease;
+}
+
+.upload-progress-text {
+  color: #ccc;
+  margin: 4px 0 0;
+  font-size: 0.7rem;
+}
+
+/* --- ARCHIVO SUBIDO --- */
+.upload-success-container {
+  border: 2px solid #10b981;
+  border-radius: 8px;
+  padding: 12px;
+  background: linear-gradient(135deg, #1a1a1a, #262626);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.upload-preview {
+  width: 50px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.upload-file-info {
+  flex: 1;
+}
+
+.upload-file-name {
+  color: white;
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.upload-file-size {
+  color: #10b981;
+  margin: 3px 0 0;
+  font-size: 0.7rem;
+}
+
+.upload-remove-btn {
+  background: #ef4444;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  transition: all 0.3s ease;
+}
+
+.upload-remove-btn:hover:not(:disabled) {
+  background: #dc2626;
+}
+
+.upload-remove-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- BOTÓN CERRAR --- */
+.register-close-btn-telofundi {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #333;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.register-close-btn-telofundi:hover {
+  background: rgba(228, 77, 17, 0.3);
+  border-color: rgb(228, 77, 17);
+}
+
+.register-close-btn-telofundi svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 3;
+}
+
+/* --- MODAL PRINCIPAL DE REGISTRO --- */
+.register-modal-telofundi.main-form:not(.mobile) {
+  max-width: 700px;
+  max-height: 80vh;
+  border-radius: 16px;
+}
+
+.register-modal-telofundi.main-form.mobile {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+}
+
+.register-modal-telofundi.main-form {
+  display: flex;
+  overflow: hidden;
+}
+
+.register-modal-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.register-modal-inner:not(.mobile) {
+  flex-direction: row;
+}
+
+.register-modal-inner.mobile {
+  flex-direction: column;
+}
+
+/* --- LADO DEL FORMULARIO --- */
+.register-form-side {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.register-form-side:not(.mobile) {
+  flex: 1;
+  max-width: 400px;
+  padding: 50px 30px 30px;
+  justify-content: center;
+}
+
+.register-form-side.mobile {
+  flex: none;
+  width: 100%;
+  height: 100%;
+  padding: 70px 25px 25px;
+  justify-content: flex-start;
+}
+
+.register-mobile-logo {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.register-logo-circle {
+  width: 80px;
+  height: 80px;
+  background: rgb(228, 77, 17);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: white;
+  box-shadow: 0 10px 30px rgba(228, 77, 17, 0.3);
+}
+
+.register-logo-circle svg {
+  width: 40px;
+  height: 40px;
+  stroke: white;
+  stroke-width: 2;
+}
+
+.register-form-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.register-form-header h2 {
+  font-weight: 700;
+  color: white;
+  margin-bottom: 6px;
+  background: linear-gradient(135deg, #fff, #ccc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.register-form-header h2:not(.mobile) {
+  font-size: 1.5rem;
+}
+
+.register-form-header h2.mobile {
+  font-size: 1.3rem;
+}
+
+/* --- MENSAJE DE ÉXITO --- */
+.register-success-message {
+  text-align: center;
+  padding: 40px 20px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.register-success-message .register-success-icon-container {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+}
+
+.register-success-message h3 {
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.register-success-message p {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* --- BADGE DE TIPO SELECCIONADO --- */
+.register-selected-type-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(228, 77, 17, 0.15);
+  border: 1px solid rgba(228, 77, 17, 0.3);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  font-size: 0.85rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.register-selected-type-change-btn {
+  background: transparent;
+  border: none;
+  color: rgb(228, 77, 17);
+  cursor: pointer;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.register-selected-type-change-btn:hover {
+  color: rgb(255, 140, 66);
+}
+
+/* --- BOTÓN GOOGLE --- */
+.register-google-btn-telofundi {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #1a1a1a, #262626);
+  border: 2px solid #333;
+  border-radius: 8px;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.register-google-btn-telofundi:hover:not(:disabled) {
+  border-color: rgb(228, 77, 17);
+  background: linear-gradient(135deg, #262626, #333);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(228, 77, 17, 0.2);
+}
+
+.register-google-btn-telofundi:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* --- DIVISOR --- */
+.register-divider-telofundi {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  color: #666;
+  font-size: 0.8rem;
+}
+
+.register-divider-line-telofundi {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #333, transparent);
+  margin: 0 12px;
+}
+
+/* --- MENSAJES DE ERROR --- */
+.register-error-message-telofundi {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* --- FORMULARIO --- */
+.register-form-telofundi {
+  margin-bottom: 20px;
+}
+
+/* --- CAMPOS DE ENTRADA --- */
+.register-input-group-telofundi {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.register-input-telofundi {
+  width: 100%;
+  background: linear-gradient(135deg, #1a1a1a, #262626);
+  border: 2px solid #333;
+  border-radius: 8px;
+  color: white;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.register-input-telofundi:not(.mobile) {
+  padding: 12px 14px;
+  font-size: 0.85rem;
+}
+
+.register-input-telofundi.mobile {
+  padding: 14px 16px;
+  font-size: 0.9rem;
+}
+
+.register-input-telofundi:focus {
+  outline: none;
+  border-color: rgb(228, 77, 17);
+  background: #262626;
+  box-shadow: 0 0 0 3px rgba(228, 77, 17, 0.1);
+}
+
+.register-input-telofundi.error {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.register-error-text {
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: 4px;
+  display: block;
+}
+
+/* --- CAMPO DE CONTRASEÑA --- */
+.password-field-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.register-password-input-wrapper {
+  position: relative;
+}
+
+.register-password-toggle-telofundi {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid #333;
+  color: #ccc;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.register-password-toggle-telofundi:hover {
+  color: white;
+  background: rgba(228, 77, 17, 0.3);
+  border-color: rgb(228, 77, 17);
+}
+
+.password-requirements {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #1a1a1a, #262626);
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-top: 6px;
+  z-index: 100;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.password-requirements small {
+  font-size: 0.75rem;
+  transition: color 0.2s ease;
+}
+
+.req-valid {
+  color: #10b981;
+}
+
+.req-invalid {
+  color: #ef4444;
+}
+
+/* --- TEXTO DE AYUDA --- */
+.register-help-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 8px 10px;
+  background: rgba(228, 77, 17, 0.1);
+  border: 1px solid rgba(228, 77, 17, 0.2);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: rgb(228, 77, 17);
+  line-height: 1.4;
+}
+
+.register-help-text.file-help {
+  margin-bottom: 10px;
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}
+
+.register-help-text svg {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* --- TURNSTILE --- */
+.register-turnstile-container {
+  margin-bottom: 20px;
+}
+
+.register-turnstile-label {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.register-turnstile-error {
+  padding: 14px;
+  border: 1px solid #ef4444;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.register-turnstile-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 65px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #1a1a1a, #262626);
+  color: #ccc;
+  font-size: 0.85rem;
+}
+
+.register-turnstile-loading .register-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #333;
+  border-top: 2px solid rgb(228, 77, 17);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+}
+
+.register-turnstile-widget {
+  min-height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #1a1a1a, #262626);
+  transition: all 0.3s ease;
+}
+
+.register-turnstile-widget.verified {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.08);
+}
+
+/* --- BOTÓN SUBMIT --- */
+.register-submit-btn-telofundi {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgb(228, 77, 17);
+  box-shadow: 0 4px 15px rgba(228, 77, 17, 0.3);
+}
+
+.register-submit-btn-telofundi:not(.mobile) {
+  padding: 14px;
+  font-size: 0.9rem;
+}
+
+.register-submit-btn-telofundi.mobile {
+  padding: 16px;
+  font-size: 0.95rem;
+}
+
+.register-submit-btn-telofundi:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(228, 77, 17, 0.4);
+}
+
+.register-submit-btn-telofundi.disabled,
+.register-submit-btn-telofundi:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: rgba(228, 77, 17, 0.5);
+  box-shadow: none;
+}
+
+.register-loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.register-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* --- LINKS DEL FORMULARIO --- */
+.register-form-links-telofundi {
+  text-align: center;
+}
+
+.register-link-primary-container {
+  color: #ccc;
+  font-size: 0.85rem;
+}
+
+.register-link-telofundi {
+  background: none;
+  border: none;
+  color: rgb(228, 77, 17);
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.register-link-telofundi:hover {
+  color: rgb(255, 140, 66);
+  text-decoration: underline;
+}
+
+/* --- FOOTER DEL FORMULARIO --- */
+.register-form-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-change-account-type {
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 10px 15px;
+  color: rgb(228, 77, 17);
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.register-change-account-type:hover {
+  background: rgba(228, 77, 17, 0.1);
+  border-color: rgb(228, 77, 17);
+}
+
+/* --- LADO DE MARCA (NO MÓVIL) --- */
+.register-brand-side {
+  flex: 0.6;
+  background: rgb(228, 77, 17);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+}
+
+.register-brand-decoration {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+}
+
+.register-brand-decoration.decoration-1 {
+  top: 15%;
+  right: 10%;
+  width: 80px;
+  height: 80px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.register-brand-decoration.decoration-2 {
+  bottom: 15%;
+  left: 15%;
+  width: 60px;
+  height: 60px;
+  animation: float 4s ease-in-out infinite reverse;
+}
+
+.register-brand-content-telofundi {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.register-brand-logo {
+  width: 140px;
+  height: 140px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.register-brand-logo svg {
+  width: 70px;
+  height: 70px;
+}
+
+.register-brand-subtitle-telofundi {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  opacity: 0.95;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.register-features-telofundi {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.register-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px 15px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.register-feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 768px) {
+  .register-documents-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .register-close-btn-telofundi {
+    top: 15px;
+    right: 15px;
+  }
+}

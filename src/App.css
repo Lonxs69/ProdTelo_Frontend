@@ -1,0 +1,73 @@
+/* MAIN CONTENT - Estilos base para páginas normales */
+.main-content {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%; /* Prevenir overflow horizontal */
+  position: relative;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden; /* Eliminar scroll horizontal */
+  box-sizing: border-box;
+}
+
+/* Reset global para prevenir scroll horizontal */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* OVERRIDE ESPECÍFICO PARA DASHBOARDS - Sin fondo negro */
+body.in-dashboard .main-content,
+.client-dashboard-active .main-content,
+.escort-dashboard-active .main-content,
+.agency-dashboard-active .main-content,
+.admin-dashboard-active .main-content {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Asegurar que el main-content en dashboards no tenga ningún estilo de fondo */
+.app:has(.client-dashboard) .main-content,
+.app:has(.escort-dashboard) .main-content,
+.app:has(.agency-dashboard) .main-content,
+.app:has(.admin-dashboard) .main-content {
+  background: transparent !important;
+  background-color: transparent !important;
+  overflow-x: hidden !important;
+}
+
+/* Para navegadores que no soportan :has, usar clase en body */
+body[data-page="client-dashboard"] .main-content,
+body[data-page="escort-dashboard"] .main-content,
+body[data-page="agency-dashboard"] .main-content,
+body[data-page="admin-dashboard"] .main-content {
+  background: transparent !important;
+  background-color: transparent !important;
+  overflow-x: hidden !important;
+}
+
+/* Eliminar cualquier pseudo-elemento que pueda crear fondos */
+.main-content::before,
+.main-content::after {
+  display: none !important;
+}
+
+/* En dashboards, el main-content debe ser completamente transparente */
+body.in-dashboard .main-content::before,
+body.in-dashboard .main-content::after {
+  display: none !important;
+  background: transparent !important;
+}

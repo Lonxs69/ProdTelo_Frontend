@@ -1,0 +1,273 @@
+/* ClientDashboard.css - Simplificado */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  /* Colores principales TeloFundi */
+  --primary-orange: #ff6b35;
+  --primary-orange-dark: #e55529;
+  --primary-orange-light: #ff8759;
+  
+  /* Grises modernos */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  
+  /* Colores oscuros mejorados */
+  --dark-bg: #0a0a0a;
+  --dark-surface: #151515;
+  --dark-elevated: #1f1f1f;
+  --dark-border: #2a2a2a;
+  --dark-card: #1a1a1a;
+  
+  /* Colores de estado */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
+  
+  /* Sombras reducidas */
+  --shadow-sm: 0 0.67px 1.34px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 2.68px 4.02px -0.67px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 6.7px 10.05px -2.01px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 13.4px 16.75px -3.35px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 13.4px rgba(255, 107, 53, 0.3);
+  
+  /* Espaciado reducido al 67% */
+  --space-1: 0.1675rem;
+  --space-2: 0.335rem;
+  --space-3: 0.5025rem;
+  --space-4: 0.67rem;
+  --space-5: 0.8375rem;
+  --space-6: 1.005rem;
+  --space-8: 1.34rem;
+  --space-10: 1.675rem;
+  --space-12: 2.01rem;
+  --space-16: 2.68rem;
+  
+  /* Border radius reducido */
+  --radius-sm: 0.25125rem;
+  --radius-md: 0.335rem;
+  --radius-lg: 0.5025rem;
+  --radius-xl: 0.67rem;
+  --radius-2xl: 1.005rem;
+  --radius-full: 9999px;
+  
+  /* Transiciones */
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Base mejorado */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--dark-bg);
+  color: white;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  font-size: 0.871rem;
+}
+
+/* Layout Principal */
+.client-dashboard {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background: var(--dark-bg);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Contenido Principal */
+.dashboard-main {
+  width: 100%;
+  height: 100%;
+  background: var(--dark-bg);
+  overflow: hidden;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.page-container-full {
+  width: 100%;
+  height: 100%;
+  background: var(--dark-bg);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Componentes del dashboard */
+.dashboard-page {
+  min-height: 100vh;
+  background: var(--dark-bg);
+  padding-top: 90px;
+  box-sizing: border-box;
+}
+
+/* Aplicar a contenedores principales de cada componente */
+
+.client-chat-page,
+.client-favorites-page,
+.client-points-page,
+.client-profile-page {
+  min-height: 100vh;
+  background: var(--dark-bg);
+  padding-top: 90px;
+  box-sizing: border-box;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .dashboard-page,
+
+  .client-chat-page,
+  .client-favorites-page,
+  .client-points-page,
+  .client-profile-page {
+    padding-top: 95px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-page,
+  
+  .client-chat-page,
+  .client-favorites-page,
+  .client-points-page,
+  .client-profile-page {
+    padding-top: 105px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-page,
+  .client-chat-page,
+  .client-favorites-page,
+  .client-points-page,
+  .client-profile-page {
+    padding-top: 115px;
+  }
+}
+
+/* Hero sections dentro de componentes del dashboard */
+.dashboard-page .hero-section,
+.dashboard-page .page-hero,
+.dashboard-page .component-hero,
+.client-chat-page .hero-section,
+.client-favorites-page .hero-section,
+.client-points-page .hero-section {
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-page .hero-section,
+  .dashboard-page .page-hero,
+  .dashboard-page .component-hero,
+  .client-chat-page .hero-section,
+  .client-favorites-page .hero-section,
+  .client-points-page .hero-section {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-page .hero-section,
+  .dashboard-page .page-hero,
+  .dashboard-page .component-hero,
+  .client-chat-page .hero-section,
+  .client-favorites-page .hero-section,
+  .client-points-page .hero-section {
+    margin-top: 8px;
+  }
+}
+
+/* Contenedores de contenido principal */
+.client-chat-page .chat-container,
+.client-favorites-page .favorites-container,
+.client-points-page .points-container {
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .client-chat-page .chat-container,
+  .client-favorites-page .favorites-container,
+  .client-points-page .points-container {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .client-chat-page .chat-container,
+  .client-favorites-page .favorites-container,
+  .client-points-page .points-container {
+    margin-top: 12px;
+  }
+}
+
+/* Headers y títulos principales */
+.dashboard-page h1,
+.dashboard-page .main-title,
+.dashboard-page .page-title {
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-page h1,
+  .dashboard-page .main-title,
+  .dashboard-page .page-title {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-page h1,
+  .dashboard-page .main-title,
+  .dashboard-page .page-title {
+    margin-top: 12px;
+  }
+}
+
+/* Animaciones básicas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(13.4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Focus States para Accesibilidad */
+button:focus,
+a:focus {
+  outline: 2px solid var(--primary-orange);
+  outline-offset: 1.34px;
+}
+
+.header.visible-scrolled,
+.header.dashboard-mode,
+.header.visible-scrolled.dashboard-mode {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}

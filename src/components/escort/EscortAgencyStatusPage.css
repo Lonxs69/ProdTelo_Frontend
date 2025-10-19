@@ -1,0 +1,11 @@
+
+/* Media query solo para móviles */
+@media (max-width: 768px) {
+  .card-solicitud{
+    position: relative;
+    left: -25px;
+  }
+}
+.heading{
+  margin-top: 3rem !important;
+}

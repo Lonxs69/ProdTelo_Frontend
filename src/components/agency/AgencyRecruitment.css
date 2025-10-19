@@ -1,0 +1,1378 @@
+/* ===========================
+   VARIABLES
+   =========================== */
+:root {
+  --color-oranged: #f97316;
+  --color-oranged-light: #fb923c;
+  --color-oranged-dark: #ea580c;
+  --color-success: #10b981;
+  --color-success-dark: #059669;
+  --color-error: #ef4444;
+  --color-error-dark: #dc2626;
+  --color-warning: #f59e0b;
+  --color-info: #3b82f6;
+  --color-text: #ffffff;
+  --color-text-muted: #9ca3af;
+  --color-text-light: #d1d5db;
+  --color-bg-primary: #000000;
+  --color-bg-secondary: #000000;
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-border-light: rgba(0, 0, 0, 0.05);
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --transition: all 0.3s ease;
+}
+
+/* ===========================
+   BASE STYLES
+   =========================== */
+.agency-recruitment-page {
+  min-height: 100vh;
+  background: rgb(0, 0, 0) !important;
+  color: var(--color-text);
+  padding-top: 80px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+}
+
+/* ===========================
+   HERO SECTION
+   =========================== */
+.hero-section {
+  background: black;
+  padding: var(--spacing-xl) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+
+
+.hero-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--color-oranged), var(--color-oranged-light));
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+}
+
+
+.hero-title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.hero-subtitle {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+.hero-controls {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+/* ===========================
+   BUTTONS
+   =========================== */
+.btn-refresh {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-refresh:hover:not(:disabled) {
+  background: rgba(34, 197, 94, 0.2);
+  transform: scale(1.05);
+}
+
+.btn-refresh:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===========================
+   CONTROLS SECTION
+   =========================== */
+.controls-section {
+  padding: var(--spacing-md) 0;
+}
+
+.requests-counter {
+  margin-bottom: var(--spacing-lg);
+}
+
+.counter-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: black;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.counter-card svg {
+  color: var(--color-oranged);
+}
+
+.counter-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.counter-badge {
+  background: rgba(249, 115, 22, 0.2);
+  color: var(--color-oranged);
+  padding: var(--spacing-xs) 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+/* ===========================
+   SEARCH
+   =========================== */
+.search-wrapper {
+  position: relative;
+  max-width: 400px;
+}
+
+.search-icon {
+  position: absolute;
+  left: var(--spacing-md);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem var(--spacing-md) 0.75rem 2.5rem;
+  color: var(--color-text);
+  font-size: 0.875rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.search-input:focus {
+  border-color: var(--color-oranged);
+}
+
+/* ===========================
+   ERROR BANNER
+   =========================== */
+.error-banner {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--color-error);
+  margin-bottom: var(--spacing-md);
+}
+
+/* ===========================
+   MAIN CONTENT
+   =========================== */
+.main-content {
+  padding-bottom: var(--spacing-xl);
+  background-color: #000000;
+}
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: var(--color-text-muted);
+}
+
+.loading-state p {
+  margin-top: var(--spacing-md);
+}
+
+/* ===========================
+   CANDIDATES GRID
+   =========================== */
+.candidates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-lg);
+  padding: 0 var(--spacing-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.candidate-card {
+  background: rgb(8, 8, 8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.candidate-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: var(--color-oranged);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--spacing-lg) var(--spacing-lg) 0;
+}
+
+.avatar-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-oranged);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+}
+
+.verified-icon {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  background: var(--color-info);
+  border: 2px solid var(--color-bg-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+}
+
+.date-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--spacing-sm);
+}
+
+.date-info {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.card-body {
+  padding: var(--spacing-md) var(--spacing-lg);
+  text-align: center;
+}
+
+.card-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 0.25rem 0;
+}
+
+.card-location {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.card-description {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-md);
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--color-oranged);
+  line-height: 1.5;
+  text-align: left;
+  max-height: 100px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.card-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
+  justify-content: center;
+}
+
+.btn-card-reject,
+.btn-card-approve {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  flex: 1;
+}
+
+.btn-card-reject {
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  background: rgb(177, 16, 16);
+  color: white;
+}
+
+.btn-card-reject:hover:not(:disabled) {
+  background: rgb(177, 16, 16);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
+}
+
+.btn-card-approve {
+  background: rgb(3, 165, 30);
+  color: white;
+}
+
+.btn-card-approve:hover:not(:disabled) {
+  background: rgba(16, 185, 129, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+.btn-card-reject:disabled,
+.btn-card-approve:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===========================
+   EMPTY STATE
+   =========================== */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem;
+  color: var(--color-text-muted);
+}
+
+.empty-state svg {
+  color: #6b7280;
+}
+
+.empty-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  margin: var(--spacing-md) 0 var(--spacing-sm);
+}
+
+.empty-text {
+  color: #6b7280;
+  max-width: 400px;
+  margin: 0;
+}
+
+/* ===========================
+   MODAL OVERLAYS
+   =========================== */
+.recruitment-modal-overlay,
+.notification-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(24px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+  z-index: 8000;
+}
+
+.notification-modal-overlay {
+  z-index: 10000;
+}
+
+/* ===========================
+   NOTIFICATION MODAL
+   =========================== */
+.notification-modal {
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.notification-success {
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.notification-error {
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.notification-warning {
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.notification-info {
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.notification-icon {
+  margin-bottom: var(--spacing-lg);
+}
+
+.notification-success .notification-icon svg {
+  color: var(--color-success);
+}
+
+.notification-error .notification-icon svg {
+  color: var(--color-error);
+}
+
+.notification-warning .notification-icon svg {
+  color: var(--color-warning);
+}
+
+.notification-info .notification-icon svg {
+  color: var(--color-info);
+}
+
+.notification-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.notification-message {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--spacing-xl) 0;
+  line-height: 1.5;
+}
+
+.notification-extra-info {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  text-align: left;
+}
+
+.extra-info-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.extra-info-header span {
+  color: var(--color-success);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.extra-info-text {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.notification-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: 0.75rem var(--spacing-xl);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: var(--radius-sm);
+  color: var(--color-success);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin: 0 auto;
+}
+
+.notification-btn:hover {
+  background: rgba(16, 185, 129, 0.2);
+  transform: scale(1.05);
+}
+
+/* ===========================
+   CONFIRMATION MODAL
+   =========================== */
+.confirmation-modal {
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 480px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.confirmation-content {
+  padding: var(--spacing-xl);
+  text-align: center;
+}
+
+.confirmation-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.icon-success {
+  color: var(--color-success);
+}
+
+.icon-error {
+  color: var(--color-error);
+}
+
+.confirmation-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.confirmation-text {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--spacing-lg) 0;
+  line-height: 1.5;
+}
+
+.confirmation-warning {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  text-align: left;
+}
+
+.warning-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.warning-header span {
+  color: var(--color-success);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.warning-text {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.candidate-preview {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  justify-content: center;
+  padding: var(--spacing-md);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.candidate-preview-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-oranged);
+}
+
+.candidate-preview-name {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.candidate-preview-location {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.confirmation-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.btn-cancel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: 0.75rem var(--spacing-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  flex: 1;
+  background: transparent;
+  color: var(--color-text-light);
+}
+
+.btn-cancel:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-confirm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: 0.75rem var(--spacing-lg);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  flex: 1;
+  color: var(--color-text);
+}
+
+.btn-approve {
+  background: linear-gradient(135deg, var(--color-success), var(--color-success-dark));
+}
+
+.btn-approve:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--color-success-dark), #047857);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+.btn-reject {
+  background: linear-gradient(135deg, var(--color-error), var(--color-error-dark));
+}
+
+.btn-reject:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--color-error-dark), #b91c1c);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
+}
+
+.btn-cancel:disabled,
+.btn-confirm:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===========================
+   RECRUITMENT MODAL (DETAILS)
+   =========================== */
+.recruitment-modal {
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.btn-close {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.btn-close:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-text);
+}
+
+.modal-body {
+  padding: var(--spacing-lg);
+  background: var(--color-bg-primary);
+}
+
+.candidate-info {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+}
+
+.candidate-avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.candidate-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-oranged);
+}
+
+.verified-badge {
+  color: var(--color-info);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.candidate-details {
+  flex: 1;
+}
+
+.candidate-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 0.25rem 0;
+}
+
+.candidate-location {
+  color: var(--color-text-muted);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.candidate-meta {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-sm);
+}
+
+.candidate-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 0.75rem 0;
+}
+
+.description-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-md);
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.service-tag {
+  background: rgba(249, 115, 22, 0.1);
+  color: var(--color-oranged);
+  padding: 0.25rem var(--spacing-sm);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+.application-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.application-date span:first-child {
+  color: var(--color-text-muted);
+}
+
+.date-value {
+  color: var(--color-oranged);
+  font-weight: 600;
+}
+
+.modal-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.btn-reject-modal,
+.btn-approve-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: 0.75rem var(--spacing-lg);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  flex: 1;
+}
+
+.btn-reject-modal {
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-light);
+}
+
+.btn-reject-modal:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: var(--color-error);
+}
+
+.btn-approve-modal {
+  border: none;
+  background: linear-gradient(135deg, var(--color-oranged), var(--color-oranged-light));
+  color: var(--color-text);
+}
+
+.btn-approve-modal:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--color-oranged-light), var(--color-oranged));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+}
+
+.btn-reject-modal:disabled,
+.btn-approve-modal:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===========================
+   ACCESS RESTRICTED
+   =========================== */
+.access-restricted {
+  text-align: center;
+}
+
+.restricted-icon {
+  color: var(--color-error);
+}
+
+.restricted-title {
+  margin: var(--spacing-md) 0;
+  color: var(--color-error);
+}
+
+.restricted-text {
+  color: var(--color-text-muted);
+}
+
+/* ===========================
+   ANIMATIONS
+   =========================== */
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .candidates-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .hero-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+ 
+
+  .hero-controls {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Mobile Landscape & Portrait */
+@media (max-width: 768px) {
+  .agency-recruitment-page {
+    padding-top: 70px;
+  }
+
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+
+  .hero-section {
+    padding: var(--spacing-md) 0;
+  }
+
+  .hero-card {
+    padding: var(--spacing-md);
+  }
+
+  .hero-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .hero-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .hero-title {
+    font-size: 1.25rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.875rem;
+  }
+
+  .candidates-grid {
+    grid-template-columns: 1fr;
+    padding: 0 var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+
+  .candidate-card {
+    max-width: 100%;
+  }
+
+  .search-wrapper {
+    max-width: 100%;
+  }
+
+  .counter-card {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .recruitment-modal,
+  .confirmation-modal,
+  .notification-modal {
+    max-width: 95%;
+    margin: var(--spacing-sm);
+  }
+
+  .modal-header {
+    padding: var(--spacing-md);
+  }
+
+  .modal-body {
+    padding: var(--spacing-md);
+  }
+
+  .modal-title {
+    font-size: 1.125rem;
+  }
+
+  .candidate-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .candidate-details {
+    width: 100%;
+  }
+
+  .confirmation-actions,
+  .modal-actions,
+  .card-actions {
+    flex-direction: column;
+  }
+
+  .btn-cancel,
+  .btn-confirm,
+  .btn-reject-modal,
+  .btn-approve-modal,
+  .btn-card-reject,
+  .btn-card-approve {
+    width: 100%;
+  }
+
+  .hero-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-refresh {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .agency-recruitment-page {
+    margin-top: -2rem;
+  }
+
+  .hero-title {
+    font-size: 1.125rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.813rem;
+  }
+
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .candidates-grid {
+    padding: 0 var(--spacing-sm);
+    gap: var(--spacing-sm);
+  }
+
+  .card-header {
+    padding: var(--spacing-md) var(--spacing-md) 0;
+  }
+
+  .card-body {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .card-actions {
+    padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
+  }
+
+  .avatar {
+    width: 56px;
+    height: 56px;
+  }
+
+  .card-name {
+    font-size: 1rem;
+  }
+
+  .card-description {
+    font-size: 0.813rem;
+    padding: var(--spacing-sm);
+  }
+
+  .notification-modal {
+    padding: var(--spacing-md);
+  }
+
+  .notification-title {
+    font-size: 1.125rem;
+  }
+
+  .notification-message {
+    font-size: 0.875rem;
+  }
+
+  .confirmation-title {
+    font-size: 1.25rem;
+  }
+
+  .confirmation-text {
+    font-size: 0.875rem;
+  }
+
+  .candidate-preview {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .modal-header {
+    padding: var(--spacing-sm);
+  }
+
+  .modal-title {
+    font-size: 1rem;
+  }
+
+  .btn-close {
+    width: 36px;
+    height: 36px;
+  }
+
+  .candidate-avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .candidate-name {
+    font-size: 1.125rem;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .hero-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .hero-title {
+    font-size: 1rem;
+  }
+
+  .counter-label {
+    font-size: 0.875rem;
+  }
+
+  .counter-badge {
+    font-size: 0.75rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .card-name {
+    font-size: 0.938rem;
+  }
+
+  .card-location {
+    font-size: 0.75rem;
+  }
+
+  .btn-card-reject,
+  .btn-card-approve {
+    font-size: 0.75rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+  
+
+  .hero-section {
+    padding: var(--spacing-sm) 0;
+  }
+
+  .recruitment-modal,
+  .confirmation-modal {
+    max-height: 95vh;
+    margin: var(--spacing-xs);
+  }
+
+  .modal-header {
+    padding: var(--spacing-sm);
+  }
+
+  .modal-body {
+    padding: var(--spacing-sm);
+  }
+
+  .loading-state {
+    padding: var(--spacing-xl);
+  }
+
+  .empty-state {
+    padding: var(--spacing-xl);
+  }
+}
+
+/* High resolution displays */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .candidates-grid {
+    max-width: 1400px;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  }
+}
+
+/* Ultra-wide displays */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+  }
+
+  .candidates-grid {
+    max-width: 1600px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .btn-refresh,
+  .btn-cancel,
+  .btn-confirm,
+  .btn-card-reject,
+  .btn-card-approve,
+  .btn-reject-modal,
+  .btn-approve-modal,
+  .btn-close,
+  .notification-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .search-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .avatar {
+    cursor: default;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .spinner {
+    animation: none;
+  }
+}
+
+/* Dark mode enhancements (already dark, but for completeness) */
+@media (prefers-color-scheme: dark) {
+  .agency-recruitment-page {
+    background: black;
+  }
+}
+
+/* Print styles */
+@media print {
+  .agency-recruitment-page {
+    padding-top: 0;
+  }
+
+  .hero-controls,
+  .search-wrapper,
+  .card-actions,
+  .modal-actions,
+  .btn-close {
+    display: none !important;
+  }
+
+  .candidate-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .recruitment-modal-overlay,
+  .notification-modal-overlay {
+    display: none !important;
+  }
+}
